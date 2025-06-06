@@ -6,7 +6,6 @@ class WeatherModel:
         self.city=city
         self.temperature=temperature
         self.time=time
-d
 class WeatherDTO:
     def __init__(self,city:str,temperature:float):
         self.city=city
