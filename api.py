@@ -13,12 +13,12 @@ class WeatherApi:
     def fetch_current(self, city:str):
      try:
 
-        url=f'https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={self.key}'
+        url=f'https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={self.key}&units=metric'
         response=requests.get(url)
         response.raise_for_status()
         return response.json()
      except Exception as e:
-          logging.error(f"Error occured: {e}")
+          logging.error(f"Error occurred: {e}")
           raise ProjectException("API has Failed") from e
 
 
