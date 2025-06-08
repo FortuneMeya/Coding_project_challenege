@@ -1,20 +1,25 @@
+##final.py
 from service import WeatherService
 
-def main():
+if __name__ == "__main__":
     service = WeatherService()
-    cities= ['Los Angeles','Miami','Milan','Chicago']
-    for city in cities:
-        try:
-            service.update_weather(city)
-            print(f'{city} updated')
-        except Exception as e:
-            print(f'Failed to update {city}: {e}')
 
-    for city in cities:
-        data= service.get_latest_weather(city)
-        if data:
-            print(f'{data.city}: {data.temperature},{data.description} at {data.timestamp}')
-        else:
-            print(f'{city} has no data')
+    print("Weather Data ")
+    print("1. Start normal service")
+    print("2. Clear weather data")
+    print("3. Reset entire database")
 
-main()
+    choice = input("Select option (1-3): ")
+
+    if choice == "1":
+        service.get_latest_weather()
+    elif choice == "2":
+        service.clear_database()
+        print("Database has been cleared")
+        service.get_latest_weather()
+    elif choice == "3":
+        service.clear_database(full_reset=True)
+        print("Database has been reset")
+        service.get_latest_weather()
+    else:
+        print("Invalid option")
