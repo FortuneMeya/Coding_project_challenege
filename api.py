@@ -1,6 +1,7 @@
 """
 Author: Fortune Meya
 Date:06/08/2025
+Backend
 Communicates with the OpenWeatherMap API in order to get the current weather
 """
 import logging
