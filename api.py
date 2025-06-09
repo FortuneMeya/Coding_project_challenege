@@ -1,8 +1,12 @@
+"""
+Author: Fortune Meya
+Date:06/08/2025
+Communicates with the OpenWeatherMap API in order to get the current weather
+"""
 import logging
 
 import requests
 from config import API_KEY
-import aiohttp
 
 
 class ProjectException(Exception):
@@ -15,6 +19,12 @@ class WeatherApi:
         self.api_key = API_KEY
 
     def fetch_current(self, city: str):
+        """
+        Gets the current weather for the given city
+        :param city: The city name
+        :return: returns the information about the city's current temperature from the api
+        Throws: ProjectException if something goes wrong
+        """
         try:
             params = {
                 'q': city,

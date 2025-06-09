@@ -1,4 +1,8 @@
-##final.py
+"""
+Author: Fortune Meya
+Date:06/08/2025
+Main program that runs the entire weather service
+"""
 from service import WeatherService
 
 if __name__ == "__main__":
@@ -9,7 +13,7 @@ if __name__ == "__main__":
     print("2. Clear weather data")
     print("3. Reset entire database")
 
-    choice = input("Select option (1-3): ")
+    choice = input("Select option (1-3): ").strip()
 
     if choice == "1":
         service.get_latest_weather()
@@ -22,4 +26,4 @@ if __name__ == "__main__":
         print("Database has been reset")
         service.get_latest_weather()
     else:
-        print("Invalid option")
+        print("Invalid option. Just pick 1, 2, or 3!")
