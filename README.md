@@ -1,5 +1,6 @@
 Weather Data Collector
-This is a Python script that collects weather data for a few cities and saves it to a database.
+
+This is a Python project that collects weather data for a few cities and saves it to a database.
 
 Run the program:
 python final.py
